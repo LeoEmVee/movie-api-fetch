@@ -17,6 +17,8 @@
     "react/jsx-filename-extension": [
       2,
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
-    ]
+    ],
+    "comma-dangle": ["error", "never"],
+    "object-curly-newline": ["never"]
   }
 }
