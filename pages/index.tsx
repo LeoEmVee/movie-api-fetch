@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default function Home() {
-  return <h1>Hola, Mierda-Movies</h1>;
+  return <h1 className="primer__titulo text-center">Hola, Mierda-Movies</h1>;
 }

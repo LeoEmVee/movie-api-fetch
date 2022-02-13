@@ -1,10 +1,10 @@
 import React from 'react';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }: any) {
+function MovieAPIFetchApp({ Component, pageProps }: any) {
   // eslint-disable-next-line react/jsx-props-no-spreading
   return <Component {...pageProps} />;
 }
 
-export default MyApp;
+export default MovieAPIFetchApp;
