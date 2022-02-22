@@ -1,5 +1,12 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
+import MovieList from '../components/MovieList';
 
 export default function Home() {
-  return <h1 className="primer__titulo text-center">Hola, Mierda-Movies</h1>;
+  return (
+    <Container>
+      <h1 className="text-center">Mierda-Movies</h1>
+      <MovieList />
+    </Container>
+  );
 }
