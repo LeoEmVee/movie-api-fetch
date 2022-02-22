@@ -4,6 +4,10 @@
   font-family: Montserrat, sans-serif;
 }
 
+.logo {
+  border-radius: 50%;
+}
+
 .primer__titulo {
   color: red;
 }
