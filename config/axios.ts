@@ -7,7 +7,7 @@ const axiosFetch = axios.create({
   baseURL: `${API_URL}`,
   headers: {
     'Content-Type': 'application/json',
-    Authorization: `${API_KEY}`
+    Authorization: `Bearer ${API_KEY}`
   }
 });
 
