@@ -1,6 +1,11 @@
+import { useContext } from 'react';
+import { movieContext } from '../context/movies/moviesContext';
 import { Card, Row, Col } from 'react-bootstrap';
 
 export default function MovieList() {
+  const movies = useContext(movieContext);
+  console.log('movies: ', movies);
+
   return (
     <Row>
       <Col md={4} className="my-3">

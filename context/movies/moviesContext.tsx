@@ -1,7 +1,10 @@
-import { createContext, useEffect } from 'react';
+import { createContext, useEffect, useReducer } from 'react';
 import axiosFetch from '../../config/axios';
+import moviesReducer from './moviesReducer';
 
 export const movieContext = createContext();
+
+export const GET_MOVIES = 'GET_MOVIES';
 
 export default function MovieWrapper({ children }: any) {
   const initialState = {
@@ -9,9 +12,17 @@ export default function MovieWrapper({ children }: any) {
     movie: {}
   };
 
+  const [state, dispatch] = useReducer(moviesReducer, initialState);
+
   useEffect(() => {
     const getMovies = async () => {
       const { data } = await axiosFetch('/movie/popular');
+      if (Object.keys(data).length) {
+        dispatch({
+          type: GET_MOVIES,
+          payload: data.results
+        });
+      }
       console.log('result: ', data);
     };
     getMovies();
@@ -20,8 +31,8 @@ export default function MovieWrapper({ children }: any) {
   return (
     <movieContext.Provider
       value={{
-        movies: initialState.movies,
-        movie: initialState.movie
+        movies: state.movies,
+        movie: state.movie
       }}
     >
       {children}
