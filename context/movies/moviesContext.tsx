@@ -1,6 +1,6 @@
 import { createContext, useEffect, useReducer } from 'react';
-import axiosFetch from '../../config/axios';
 import moviesReducer from './moviesReducer';
+import { getMovies } from '../../helpers/crud';
 
 export const movieContext = createContext();
 
@@ -15,16 +15,16 @@ export default function MovieWrapper({ children }: any) {
   const [state, dispatch] = useReducer(moviesReducer, initialState);
 
   useEffect(() => {
-    const getMovies = async () => {
-      const { data } = await axiosFetch('/movie/popular');
-      if (Object.keys(data).length) {
+    const fetchMovies = async () => {
+      const movies = await getMovies('/movie/popular');
+      if (Object.keys(movies).length) {
         dispatch({
           type: GET_MOVIES,
-          payload: data.results
+          payload: movies.results
         });
       }
     };
-    getMovies();
+    fetchMovies();
   }, []);
 
   return (

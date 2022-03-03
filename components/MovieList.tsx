@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { movieContext } from '../context/movies/moviesContext';
 import { Card, Row, Col } from 'react-bootstrap';
+import Link from 'next/link';
 
 const PIC_ID = process.env.NEXT_PUBLIC_PIC_ID;
 
@@ -26,7 +27,9 @@ export default function MovieList() {
                 className="img-thumbnail"
               />
               <Card.Body>
-                <Card.Title>{m.original_title}</Card.Title>
+                <Card.Title>
+                  <Link href={`/movies/${m.id}`}>{m.original_title}</Link>
+                </Card.Title>
                 <Card.Text>{m.overview}</Card.Text>
                 <Card.Subtitle>
                   Release date: {formatter.format(Date.parse(m.release_date))}
