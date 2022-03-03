@@ -23,7 +23,6 @@ export default function MovieWrapper({ children }: any) {
           payload: data.results
         });
       }
-      console.log('result: ', data);
     };
     getMovies();
   }, []);
