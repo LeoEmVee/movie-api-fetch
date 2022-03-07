@@ -7,7 +7,6 @@ const PIC_ID = process.env.NEXT_PUBLIC_PIC_ID;
 
 export default function MovieList() {
   const { movies }: any = useContext(movieContext);
-  movies.length && console.log('movies: ', movies);
 
   const formatter = new Intl.DateTimeFormat('de-DE', {
     year: 'numeric',

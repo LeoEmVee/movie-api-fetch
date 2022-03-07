@@ -5,6 +5,6 @@ export const getMovies = async (path: any) => {
     const { data } = await axiosFetch(path);
     return data;
   } catch (error: any) {
-    console.log('Error: ', error.message);
+    throw new Error(`error: ${error}`);
   }
 };

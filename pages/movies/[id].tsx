@@ -5,9 +5,8 @@ import Movie from '../../components/Movie';
 import { getMovies } from '../../helpers/crud';
 
 export default function MovieId({ data }: any) {
-  console.log('data: ', data);
   const { movie, cast } = data;
-  const { getMovieById, getCast } = useContext(movieContext);
+  const { getMovieById, getCast }: any = useContext(movieContext);
 
   useEffect(() => {
     if (Object.keys(data).length) {
@@ -31,8 +30,6 @@ export async function getServerSideProps(ctx: any) {
       cast: await getMovies(`/movie/${id}/credits`)
     }
   ]);
-
-  console.log('result: ', result);
 
   return {
     props: {

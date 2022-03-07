@@ -2,7 +2,7 @@ import { createContext, useEffect, useReducer } from 'react';
 import moviesReducer from './moviesReducer';
 import { getMovies } from '../../helpers/crud';
 
-export const movieContext = createContext();
+export const movieContext = createContext({});
 
 export const GET_MOVIES = 'GET_MOVIES';
 export const GET_MOVIE_BY_ID = 'GET_MOVIE_BY_ID';

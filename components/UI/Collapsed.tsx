@@ -6,7 +6,7 @@ const PIC_ID = process.env.NEXT_PUBLIC_PIC_ID;
 
 export default function Collapsed() {
   const [open, setOpen] = useState(false);
-  const { cast } = useContext(movieContext);
+  const { cast }: any = useContext(movieContext);
   return (
     <Container>
       <Button

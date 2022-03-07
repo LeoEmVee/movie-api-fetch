@@ -6,9 +6,7 @@ import Collapsed from './UI/Collapsed';
 const PIC_ID = process.env.NEXT_PUBLIC_PIC_ID;
 
 export default function Movie() {
-  const { movie, cast } = useContext(movieContext);
-  console.log('movie: ', movie);
-  console.log('cast: ', cast);
+  const { movie }: any = useContext(movieContext);
 
   return (
     <Container>
