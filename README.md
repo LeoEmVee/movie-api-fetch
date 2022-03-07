@@ -10,3 +10,8 @@ https://movie-api-fetch-leoemvee.vercel.app/
 
 - `npm i`
 - `npm run dev`
+
+# To do
+
+- Implement search engine
+- Debugging
