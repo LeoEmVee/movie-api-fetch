@@ -1,12 +1,13 @@
 import { useContext } from 'react';
 import { movieContext } from '../context/movies/moviesContext';
-import { Button, Col, Container, Image, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Image, Row } from 'react-bootstrap';
 
 const PIC_ID = process.env.NEXT_PUBLIC_PIC_ID;
 
 export default function Movie() {
-  const { movie } = useContext(movieContext);
+  const { movie, cast } = useContext(movieContext);
   console.log('movie: ', movie);
+  console.log('cast: ', cast);
 
   return (
     <Container>
@@ -28,8 +29,30 @@ export default function Movie() {
                 {(movie.homepage && movie.homepage) || 'N/A'}
               </p>
             </div>
+            <Container>
+              <Button className="d-block m-auto">Cast</Button>
+              <Row className="my-3">
+                {cast.length &&
+                  cast.map((c: any) => (
+                    <Col md={4}>
+                      <Card>
+                        <Card.Img
+                          src={
+                            (c.profile_path && `${PIC_ID}/${c.profile_path}`) ||
+                            '/img/mierda-logo.png'
+                          }
+                          className="img-thumbnail"
+                        />
+                        <Card.Body>
+                          <Card.Title>{c.character}</Card.Title>
+                          <Card.Subtitle>{c.name}</Card.Subtitle>
+                        </Card.Body>
+                      </Card>
+                    </Col>
+                  ))}
+              </Row>
+            </Container>
           </Container>
-          <Button className="d-block m-auto">Cast</Button>
         </Col>
       </Row>
     </Container>
