@@ -32,7 +32,8 @@ export default function MovieList() {
                 </Card.Title>
                 <Card.Text>{m.overview}</Card.Text>
                 <Card.Subtitle>
-                  Release date: {formatter.format(Date.parse(m.release_date))}
+                  <b>Release date: </b>
+                  {formatter.format(Date.parse(m.release_date))}
                 </Card.Subtitle>
               </Card.Body>
             </Card>

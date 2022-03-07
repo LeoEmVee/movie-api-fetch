@@ -1,31 +1,31 @@
+import { useContext } from 'react';
+import { movieContext } from '../context/movies/moviesContext';
 import { Button, Col, Container, Image, Row } from 'react-bootstrap';
 
+const PIC_ID = process.env.NEXT_PUBLIC_PIC_ID;
+
 export default function Movie() {
+  const { movie } = useContext(movieContext);
+  console.log('movie: ', movie);
+
   return (
     <Container>
-      <h1 className="text-center my-5">Mierda-movie-prueba</h1>;
+      <h1 className="text-center my-5">{movie.original_title}</h1>;
       <Row>
         <Col md={4}>
-          <Image
-            src="https://i1.sndcdn.com/artworks-000469915644-5ssd5g-t500x500.jpg"
-            thumbnail
-          />
+          <Image src={`${PIC_ID}/${movie.poster_path}`} thumbnail />
         </Col>
         <Col md={8}>
           <Container>
             <div className="py-3">
+              <p>{movie.overview}</p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <b>Release date: </b>
+                {movie.release_date}
               </p>
               <p>
-                <b>Release date: </b>01.01.0001
-                <b>Home page: </b>https://forocoches.com
+                <b>Homepage: </b>
+                {(movie.homepage && movie.homepage) || 'N/A'}
               </p>
             </div>
           </Container>
