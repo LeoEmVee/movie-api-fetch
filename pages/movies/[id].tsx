@@ -1,9 +1,21 @@
+import { useContext, useEffect } from 'react';
+import { movieContext } from '../../context/movies/moviesContext';
 import { Container } from 'react-bootstrap';
 import Movie from '../../components/Movie';
 import { getMovies } from '../../helpers/crud';
 
-export default function MovieId({ data }) {
+export default function MovieId({ data }: any) {
   console.log('data: ', data);
+  const { movie, cast } = data;
+  const { getMovieById, getCast } = useContext(movieContext);
+
+  useEffect(() => {
+    if (Object.keys(data).length) {
+      getMovieById(movie);
+      getCast(cast.cast);
+    }
+  }, [data]);
+
   return (
     <Container>
       <Movie />

@@ -5,11 +5,14 @@ import { getMovies } from '../../helpers/crud';
 export const movieContext = createContext();
 
 export const GET_MOVIES = 'GET_MOVIES';
+export const GET_MOVIE_BY_ID = 'GET_MOVIE_BY_ID';
+export const GET_CAST = 'GET_CAST';
 
 export default function MovieWrapper({ children }: any) {
   const initialState = {
     movies: [],
-    movie: {}
+    movie: {},
+    cast: []
   };
 
   const [state, dispatch] = useReducer(moviesReducer, initialState);
@@ -27,11 +30,28 @@ export default function MovieWrapper({ children }: any) {
     fetchMovies();
   }, []);
 
+  const getMovieById = (payload: any) => {
+    dispatch({
+      type: GET_MOVIE_BY_ID,
+      payload
+    });
+  };
+
+  const getCast = (payload: any) => {
+    dispatch({
+      type: GET_CAST,
+      payload
+    });
+  };
+
   return (
     <movieContext.Provider
       value={{
         movies: state.movies,
-        movie: state.movie
+        movie: state.movie,
+        cast: state.cast,
+        getMovieById: getMovieById,
+        getCast: getCast
       }}
     >
       {children}
