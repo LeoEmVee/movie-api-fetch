@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { movieContext } from '../context/movies/moviesContext';
-import { Button, Card, Col, Container, Image, Row } from 'react-bootstrap';
+import { Col, Container, Image, Row } from 'react-bootstrap';
+import Collapsed from './UI/Collapsed';
 
 const PIC_ID = process.env.NEXT_PUBLIC_PIC_ID;
 
@@ -14,7 +15,12 @@ export default function Movie() {
       <h1 className="text-center my-5">{movie.original_title}</h1>;
       <Row>
         <Col md={4}>
-          <Image src={`${PIC_ID}/${movie.poster_path}`} thumbnail />
+          <Image
+            src={
+              movie.poster_path ? `${PIC_ID}/${movie.poster_path}` : undefined
+            }
+            className="img-thumbnail"
+          />
         </Col>
         <Col md={8}>
           <Container>
@@ -29,29 +35,7 @@ export default function Movie() {
                 {(movie.homepage && movie.homepage) || 'N/A'}
               </p>
             </div>
-            <Container>
-              <Button className="d-block m-auto">Cast</Button>
-              <Row className="my-3">
-                {cast.length &&
-                  cast.map((c: any) => (
-                    <Col md={4}>
-                      <Card>
-                        <Card.Img
-                          src={
-                            (c.profile_path && `${PIC_ID}/${c.profile_path}`) ||
-                            '/img/mierda-logo.png'
-                          }
-                          className="img-thumbnail"
-                        />
-                        <Card.Body>
-                          <Card.Title>{c.character}</Card.Title>
-                          <Card.Subtitle>{c.name}</Card.Subtitle>
-                        </Card.Body>
-                      </Card>
-                    </Col>
-                  ))}
-              </Row>
-            </Container>
+            <Collapsed />
           </Container>
         </Col>
       </Row>
