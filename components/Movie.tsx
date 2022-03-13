@@ -9,7 +9,7 @@ export default function Movie() {
   const { movie }: any = useContext(movieContext);
 
   return (
-    <Container>
+    <Container className="contents">
       <h1 className="text-center my-5">{movie.original_title}</h1>;
       <Row>
         <Col md={4}>

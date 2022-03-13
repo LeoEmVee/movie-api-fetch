@@ -3,7 +3,7 @@ import MovieList from '../components/MovieList';
 
 export default function Home() {
   return (
-    <Container>
+    <Container className="contents">
       <h1 className="text-center">Practice-Movies</h1>
       <MovieList />
     </Container>

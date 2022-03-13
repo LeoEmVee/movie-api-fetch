@@ -10,7 +10,7 @@ import {
 export default function Header() {
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar className="fixed-top" bg="dark" variant="dark" expand="lg">
         <Container>
           <Navbar.Brand href="/">
             Practice <Image className="logo" src="/img/mierda-logo.png" />{' '}
