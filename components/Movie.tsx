@@ -30,7 +30,13 @@ export default function Movie() {
               </p>
               <p>
                 <b>Homepage: </b>
-                {(movie.homepage && movie.homepage) || 'N/A'}
+                {movie.homepage ? (
+                  <a href={movie.homepage} target="_blank">
+                    {movie.homepage}
+                  </a>
+                ) : (
+                  'N/A'
+                )}
               </p>
             </div>
             <Collapsed />
