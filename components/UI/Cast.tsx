@@ -4,7 +4,7 @@ import { Container, Button, Row, Col, Card, Collapse } from 'react-bootstrap';
 
 const PIC_ID = process.env.NEXT_PUBLIC_PIC_ID;
 
-export default function Collapsed() {
+export default function Cast() {
   const [open, setOpen] = useState(false);
   const { cast }: any = useContext(movieContext);
   return (

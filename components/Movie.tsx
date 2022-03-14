@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { movieContext } from '../context/movies/moviesContext';
 import { Col, Container, Image, Row } from 'react-bootstrap';
-import Collapsed from './UI/Collapsed';
+import Cast from './UI/Cast';
 import formatter from '../helpers/time-formatter';
 
 const PIC_ID = process.env.NEXT_PUBLIC_PIC_ID;
@@ -40,7 +40,7 @@ export default function Movie() {
                 )}
               </p>
             </div>
-            <Collapsed />
+            <Cast />
           </Container>
         </Col>
       </Row>
