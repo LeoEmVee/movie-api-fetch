@@ -2,17 +2,12 @@ import { useContext } from 'react';
 import { movieContext } from '../context/movies/moviesContext';
 import { Card, Row, Col } from 'react-bootstrap';
 import Link from 'next/link';
+import formatter from '../helpers/time-formatter';
 
 const PIC_ID = process.env.NEXT_PUBLIC_PIC_ID;
 
 export default function MovieList() {
   const { movies }: any = useContext(movieContext);
-
-  const formatter = new Intl.DateTimeFormat('de-DE', {
-    year: 'numeric',
-    month: 'numeric',
-    day: 'numeric'
-  });
 
   return (
     <Row>
@@ -32,7 +27,7 @@ export default function MovieList() {
                 <Card.Text>{m.overview}</Card.Text>
                 <Card.Subtitle>
                   <b>Release date: </b>
-                  {formatter.format(Date.parse(m.release_date))}
+                  {formatter(m.release_date)}
                 </Card.Subtitle>
               </Card.Body>
             </Card>
