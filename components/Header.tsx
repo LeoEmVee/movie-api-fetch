@@ -13,7 +13,7 @@ export default function Header() {
       <Navbar className="fixed-top" bg="dark" variant="dark" expand="lg">
         <Container>
           <Navbar.Brand href="/">
-            Practice <Image className="logo" src="/img/mierda-logo.png" />{' '}
+            Practice <Image className="logo" src="/img/logo-para-apps.png" />{' '}
             Movies
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
