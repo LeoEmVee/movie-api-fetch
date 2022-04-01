@@ -1,11 +1,5 @@
-import {
-  Navbar,
-  Container,
-  Form,
-  FormControl,
-  Button,
-  Image
-} from 'react-bootstrap';
+import { Navbar, Container, Image } from 'react-bootstrap';
+import SearchBar from './SearchBar';
 
 export default function Header() {
   return (
@@ -18,15 +12,7 @@ export default function Header() {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse className="justify-content-end">
-            <Form className="d-flex">
-              <FormControl
-                type="search"
-                placeholder="Search"
-                className="mr-sm-2"
-                aria-label="Search"
-              />
-              <Button variant="outline-success">Search</Button>
-            </Form>
+            <SearchBar />
           </Navbar.Collapse>
         </Container>
       </Navbar>

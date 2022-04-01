@@ -1,6 +1,6 @@
 # Movie API fetch
 
-Small web app for fetching movies from TMDB, built following the tutorial from [anjrotDev](https://github.com/anjrotDev): [Api fetch con Next.js](https://www.youtube.com/watch?v=ci5mlSm1pto).
+Small web app for fetching movies from TMDB, built following the tutorial by [anjrotDev](https://github.com/anjrotDev) in YouTube: [Api fetch con Next.js](https://www.youtube.com/watch?v=ci5mlSm1pto).
 
 # Demo
 
