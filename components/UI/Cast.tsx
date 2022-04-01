@@ -28,10 +28,12 @@ export default function Cast() {
                         src={
                           c.profile_path
                             ? `${PIC_ID}/${c.profile_path}`
-                            : '/img/mierda-logo.png'
+                            : '/img/logo-para-apps.png'
                         }
                         className="img-thumbnail"
                       />
+                      {!c.profile_path &&
+                        `No, ${c.name} is not this nice guy, but there's no pic available here`}
                       <Card.Body>
                         <Card.Title>{c.character}</Card.Title>
                         <Card.Subtitle>{c.name}</Card.Subtitle>
