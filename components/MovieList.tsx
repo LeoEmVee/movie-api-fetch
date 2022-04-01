@@ -1,18 +1,29 @@
-import { useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { movieContext } from '../context/movies/moviesContext';
 import { Card, Row, Col } from 'react-bootstrap';
 import Link from 'next/link';
 import formatter from '../helpers/time-formatter';
+import { useRouter } from 'next/router';
 
 const PIC_ID = process.env.NEXT_PUBLIC_PIC_ID;
 
 export default function MovieList() {
-  const { movies }: any = useContext(movieContext);
+  const [showMovies, setShowMovies] = useState([]);
+  const { movies, searchMovie }: any = useContext(movieContext);
+  const router = useRouter();
+
+  useEffect(() => {
+    const render = () =>
+      router.pathname === '/search'
+        ? setShowMovies(searchMovie)
+        : setShowMovies(movies);
+    render();
+  }, [router, showMovies, movies]);
 
   return (
     <Row>
-      {movies.length &&
-        movies.map((m: any) => (
+      {showMovies.length &&
+        showMovies.map((m: any) => (
           <Col md={4} className="my-3" key={m.id}>
             <Card>
               <Card.Img
