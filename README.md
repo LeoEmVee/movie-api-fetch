@@ -10,8 +10,10 @@ https://movie-api-fetch-leoemvee.vercel.app/
 
 - `npm i`
 - `npm run dev`
+- You will need an API key from TMDB (requires sign up): https://www.themoviedb.org/. There you will get the paths to PIC_ID and API_URL as well
 
 # To do
 
-- Implement search engine
+- Define types (currently all are 'any')
 - Debugging
+- Restyling

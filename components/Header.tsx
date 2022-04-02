@@ -6,7 +6,7 @@ export default function Header() {
     <header>
       <Navbar className="fixed-top" bg="dark" variant="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="/">
+          <Navbar.Brand className="brand" href="/">
             Practice <Image className="logo" src="/img/logo-para-apps.png" />{' '}
             Movies
           </Navbar.Brand>

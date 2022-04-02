@@ -1,8 +1,18 @@
+@font-face {
+  font-family: 'Chlorinar';
+  src: local('Chlorinar'),
+    url('../public/fonts/Chlorinar.ttf') format('truetype');
+}
+
 * {
   padding: 0;
   margin: 0;
   font-family: Montserrat, sans-serif;
   user-select: none;
+}
+
+.brand {
+  font-family: 'Chlorinar';
 }
 
 .logo {
@@ -12,4 +22,23 @@
 .contents {
   margin-top: 5%;
   padding-top: 5%;
+}
+
+.index-text {
+  font-family: 'Chlorinar';
+}
+
+.not-found {
+  font-family: 'Chlorinar';
+}
+
+.movie-title {
+  font-weight: bolder;
+}
+
+.movie-link a {
+  font-weight: bolder;
+  text-decoration: underline;
+  color: rgb(0, 2, 67);
+  font-size: 1.5rem;
 }

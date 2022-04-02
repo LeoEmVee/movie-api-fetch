@@ -22,7 +22,7 @@ export default function MovieList() {
 
   return (
     <Row>
-      {showMovies.length &&
+      {(showMovies.length &&
         showMovies.map((m: any) => (
           <Col md={4} className="my-3" key={m.id}>
             <Card>
@@ -32,10 +32,13 @@ export default function MovieList() {
                 className="img-thumbnail"
               />
               <Card.Body>
-                <Card.Title>
+                <Card.Title className="movie-link">
                   <Link href={`/movies/${m.id}`}>{m.original_title}</Link>
                 </Card.Title>
-                <Card.Text>{m.overview}</Card.Text>
+                <Card.Text>
+                  {m.overview.slice(0, 100) +
+                    `${(m.overview.length > 100 && '...') || ''}`}
+                </Card.Text>
                 <Card.Subtitle>
                   <b>Release date: </b>
                   {formatter(m.release_date)}
@@ -43,7 +46,11 @@ export default function MovieList() {
               </Card.Body>
             </Card>
           </Col>
-        ))}
+        ))) || (
+        <h1 className="not-found contents text-center">
+          No movies found. Try another search
+        </h1>
+      )}
     </Row>
   );
 }

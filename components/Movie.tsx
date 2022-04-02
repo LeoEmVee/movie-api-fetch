@@ -11,7 +11,7 @@ export default function Movie() {
 
   return (
     <Container className="contents">
-      <h1 className="text-center my-5">{movie.original_title}</h1>;
+      <h1 className="movie-title text-center my-5">{movie.original_title}</h1>;
       <Row>
         <Col md={4}>
           <Image
