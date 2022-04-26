@@ -47,7 +47,7 @@ export default function MovieWrapper({ children }: any) {
     });
   };
 
-  const searchMovies = (payload: any) => {
+  const searchMovies = (payload: any[]) => {
     const cleanPayload = cleanData(payload, 'backdrop_path');
     dispatch({
       type: SEARCH_MOVIES,

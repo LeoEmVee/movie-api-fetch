@@ -28,10 +28,10 @@ export default function MovieList() {
             <Card>
               <Card.Img
                 variant="top"
-                src={`${PIC_ID}/${m.backdrop_path}`}
+                src={m.backdrop_path && `${PIC_ID}/${m.backdrop_path}` || '/img/logo-para-apps.png'}
                 className="img-thumbnail"
               />
-              <Card.Body>
+              <Card.Body className="movie-list-card-body">
                 <Card.Title className="movie-link">
                   <Link href={`/movies/${m.id}`}>{m.original_title}</Link>
                 </Card.Title>
@@ -46,7 +46,7 @@ export default function MovieList() {
               </Card.Body>
             </Card>
           </Col>
-        ))) || (
+        )).slice(0,15)) || (
         <h1 className="not-found contents text-center">
           No movies found. Try another search
         </h1>

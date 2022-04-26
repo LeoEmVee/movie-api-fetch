@@ -8,9 +8,12 @@ https://movie-api-fetch-leoemvee.vercel.app/
 
 # To run locally
 
+- Environment: You will need a NEXT_PUBLIC_API_KEY key from TMDB (requires sign up): https://www.themoviedb.org/. There you will get the paths to NEXT_PUBLIC_PIC_ID and NEXT_PUBLIC_API_URL as well 
+
+Then:
+
 - `npm i`
 - `npm run dev`
-- You will need an API key from TMDB (requires sign up): https://www.themoviedb.org/. There you will get the paths to PIC_ID and API_URL as well
 
 # To do
 

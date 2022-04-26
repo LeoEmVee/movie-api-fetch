@@ -7,6 +7,7 @@ const PIC_ID = process.env.NEXT_PUBLIC_PIC_ID;
 export default function Cast() {
   const [open, setOpen] = useState(false);
   const { cast }: any = useContext(movieContext);
+  
   return (
     <Container>
       <Button
@@ -19,11 +20,11 @@ export default function Cast() {
       </Button>
       <Collapse in={open}>
         <div id="show-movies">
-          <Row className="my-3">
+          <Row className="my-4 mx-1">
             {cast.length
               ? cast.map((c: any) => (
                   <Col md={4} key={c.id}>
-                    <Card>
+                    <Card className="cast-card-body">
                       <Card.Img
                         src={
                           c.profile_path

@@ -1,4 +1,4 @@
-export default function formatter(date: any) {
+export default function formatter(date: string) {
   return (
     date &&
     new Intl.DateTimeFormat('de-DE', {

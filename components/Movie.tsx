@@ -16,7 +16,7 @@ export default function Movie() {
         <Col md={4}>
           <Image
             src={
-              movie.poster_path ? `${PIC_ID}/${movie.poster_path}` : undefined
+              movie.poster_path && `${PIC_ID}/${movie.poster_path}` || '/img/logo-para-apps.png'
             }
             className="img-thumbnail"
           />

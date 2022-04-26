@@ -13,13 +13,13 @@ export default function SearchBar() {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    
     try {
       const seekMovies = await getMovies(`/search/movie?query=${search}`);
-      console.log(seekMovies);
       searchMovies(seekMovies.results);
       setSearch('');
       router.push(`/search?movie=${search}`);
-    } catch (error: any) {
+    } catch (error: unknown) {
       throw new Error(`error: ${error}`);
     }
   };

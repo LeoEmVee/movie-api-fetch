@@ -30,7 +30,7 @@ export async function getServerSideProps(ctx: any) {
       cast: await getMovies(`/movie/${id}/credits`)
     }
   ]);
-
+  
   return {
     props: {
       data: result

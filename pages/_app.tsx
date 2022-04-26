@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.css';
-import Header from '../components/Header';
 import MovieWrapper from '../context/movies/moviesContext';
 import Layout from '../components/Layout';
 

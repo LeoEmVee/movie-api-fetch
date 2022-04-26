@@ -42,3 +42,17 @@
   color: rgb(0, 2, 67);
   font-size: 1.5rem;
 }
+
+.cast-card-body {
+  border: 1em solid white;
+  height: 100%;
+}
+
+.movie-list-card-body {
+  height: 100%;
+}
+
+.img-thumbnail {
+  object-fit: contain;
+  size: 100%
+}
